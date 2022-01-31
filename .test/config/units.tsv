@@ -1,6 +1,9 @@
-sample	unit	fragment_len_mean	fragment_len_sd	fq1	fq2
-A	1			ngs-test-data/reads/a.chr21.1.fq	ngs-test-data/reads/a.chr21.2.fq
-B	1			ngs-test-data/reads/b.chr21.1.fq	ngs-test-data/reads/b.chr21.2.fq
-B	2	300	14	ngs-test-data/reads/b.chr21.1.fq	
-C	1			ngs-test-data/reads/a.chr21.1.fq	ngs-test-data/reads/a.chr21.2.fq
-D	1			ngs-test-data/reads/b.chr21.1.fq	ngs-test-data/reads/b.chr21.2.fq
+sample	unit	fq1	fq2
+A418R	1	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A418R_S35_L001_R1_001.fastq.gz	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A418R_S35_L001_R2_001.fastq.gz
+A418R	2	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A418R_S35_L002_R1_001.fastq.gz	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A418R_S35_L002_R2_001.fastq.gz
+A429R	1	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A429R_S39_L001_R1_001.fastq.gz	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A429R_S39_L001_R2_001.fastq.gz
+A429R	2	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A429R_S39_L002_R1_001.fastq.gz	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A429R_S39_L002_R2_001.fastq.gz
+A435R	1	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A435R_S41_L001_R1_001.fastq.gz	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A435R_S41_L001_R2_001.fastq.gz
+A435R	2	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A435R_S41_L002_R1_001.fastq.gz	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A435R_S41_L002_R2_001.fastq.gz
+A441L	1	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A441L_S43_L001_R1_001.fastq.gz	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A441L_S43_L001_R2_001.fastq.gz
+A441L	2	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A441L_S43_L002_R1_001.fastq.gz	/home/bgfritz/pipelines/RNA_seq3/.test/ngs-test-data/A441L_S43_L002_R2_001.fastq.gz

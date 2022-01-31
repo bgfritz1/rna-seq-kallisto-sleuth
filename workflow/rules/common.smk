@@ -70,6 +70,13 @@ def get_fastqs(wildcards):
         u = units.loc[(wildcards.sample, wildcards.unit), ["fq1", "fq2"]].dropna()
         return [f"{u.fq1}", f"{u.fq2}"]
 
+def get_fastqs_fq1(wildcards):
+    return units.loc[(wildcards.sample, wildcards.unit), "fq1"]
+
+def get_fastqs_fq2(wildcards):
+    u = units.loc[(wildcards.sample, wildcards.unit), ["fq1", "fq2"]].dropna()
+    return [f"{u.fq2}"]
+
 
 def get_trimmed(wildcards):
     if not is_single_end(**wildcards):
@@ -266,5 +273,21 @@ def all_input(wildcards):
                 cons=["with_consequences", "without_consequences"],
             )
         )
+    
+    if config["QC"]:
+        wanted_input.extend(
+            expand("qc/fastqc/pretrim/{unit.sample}-{unit.unit}_{read}.html",
+                unit=units[["sample", "unit"]].itertuples(),
+                read = [1,2]
+            )
+        )
+
+        wanted_input.extend(
+            expand("qc/fastqc/posttrim/{unit.sample}-{unit.unit}_1.html",
+                unit=units[["sample", "unit"]].itertuples(),
+                read = [1,2]
+            )
+        )        
+
 
     return wanted_input

@@ -3,7 +3,7 @@ from snakemake.utils import min_version
 min_version("6.3.0")
 
 
-configfile: "config/config.yaml"
+#configfile: "config/config.yaml"
 
 
 report: "report/workflow.rst"
@@ -16,6 +16,7 @@ container: "docker://continuumio/miniconda3"
 
 include: "rules/common.smk"
 include: "rules/trim.smk"
+include: "rules/QC.smk"
 include: "rules/ref.smk"
 include: "rules/quant.smk"
 include: "rules/diffexp.smk"
