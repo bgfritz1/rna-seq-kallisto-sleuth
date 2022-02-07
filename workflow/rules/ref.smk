@@ -1,19 +1,34 @@
-rule get_transcriptome:
-    output:
-        "resources/transcriptome.{type}.fasta",
-    log:
-        "logs/get-transcriptome/{type}.log",
-    params:
-        species=config["resources"]["ref"]["species"],
-        datatype="{type}",
-        build=config["resources"]["ref"]["build"],
-        release=config["resources"]["ref"]["release"],
-    wildcard_constraints:
-        type="cdna|cds|ncrna",
-    cache: True
-    wrapper:
-        "0.74.0/bio/reference/ensembl-sequence"
 
+if config["ref"]["type"] == "bacteria":
+    rule get_transcriptome:
+        output:
+            "resources/transcriptome.{type}.fasta",
+        log:
+            "logs/get-transcriptome/{type}.log"
+        params:
+            accession = config["ref"]["accession"]
+            datatype = {type}
+        wildcard_constraints:
+            type="cdna|cds|ncrna",
+        cache: True
+        script:
+            "../scripts/get-genome-bacteria.py"
+else: 
+    rule get_transcriptome:
+        output:
+            "resources/transcriptome.{type}.fasta",
+        log:
+            "logs/get-transcriptome/{type}.log",
+        params:
+            species=config["resources"]["ref"]["species"],
+            datatype="{type}",
+            build=config["resources"]["ref"]["build"],
+            release=config["resources"]["ref"]["release"],
+        wildcard_constraints:
+            type="cdna|cds|ncrna",
+        cache: True
+        wrapper:
+            "0.74.0/bio/reference/ensembl-sequence"
 
 rule get_annotation:
     output:
